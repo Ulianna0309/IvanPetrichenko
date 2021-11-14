@@ -1,4 +1,4 @@
-/*const numberOfFilms = prompt('Сколько фильмов вы уже просмотрели?');
+const numberOfFilms = prompt('Сколько фильмов вы уже просмотрели?');
 const personalMovieDB = {
     count:  numberOfFilms,
     movies: {},
@@ -7,21 +7,39 @@ const personalMovieDB = {
     privat: false
 };
 
-const a = prompt('Один из последний фильмов?', ''),
-      b = prompt('На сколько оцените его?', ''),
-      c = prompt('Один из последний фильмов?', ''),
-      d = prompt('На сколько оцените его?', '');
-
-
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
 
 
 
-console.log(personalMovieDB);
 
-*/
-const num = 50;
+for (let i = 0; i < 2; i++) {
+    const a = prompt('Один из последний фильмов?', '');
+      b = prompt('На сколько оцените его?', '');
+
+      personalMovieDB.movies[a] = b;
+      if(a != null & b != null && a != '' && b !='' && a.length < 50){
+          personalMovieDB.movies[a] = b;
+          console.log('done');
+      } else {
+          console.log('error');
+          i--;
+      }
+
+      if(personalMovieDB.count<10){
+          console.log('Мало')
+      } else if (personalMovieDB >= 10 && personalMovieDB < 30){
+          console.log('Вы классический зритель');
+      } else if (personalMovieDB.count >= 30){
+          console.log('Вы кономан')
+      }else {
+          console.log('Ошибка');
+      }
+      console.log(personalMovieDB);
+}
+
+
+
+
+/*const num = 50;
 switch(num){
     case 50:
         console.log('Оно');
@@ -47,7 +65,7 @@ do{
     num2++;
 }
 
-while(num2 < 55);*/
+while(num2 < 55);
 
 for (let i = 1; i < 10; i++){
 
@@ -56,4 +74,4 @@ for (let i = 1; i < 10; i++){
         continue;
     }
     console.log(i);
-}
+}*/
