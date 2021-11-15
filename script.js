@@ -1,4 +1,4 @@
-const numberOfFilms = prompt('Сколько фильмов вы уже просмотрели?');
+/*const numberOfFilms = prompt('Сколько фильмов вы уже просмотрели?');
 const personalMovieDB = {
     count:  numberOfFilms,
     movies: {},
@@ -34,7 +34,7 @@ for (let i = 0; i < 2; i++) {
           console.log('Ошибка');
       }
       console.log(personalMovieDB);
-}
+}*/
 
 
 
@@ -55,7 +55,7 @@ switch(num){
 
 let num2 = 50;
 
-/*while(num2 <= 55){
+while(num2 <= 55){
     console.log(num2);
     num2++;
 }
@@ -75,3 +75,37 @@ for (let i = 1; i < 10; i++){
     }
     console.log(i);
 }*/
+
+let num = 20;
+function showFitrstMessage(text) {
+    console.log(text)
+    num = 10;
+    console.log(num);
+}
+
+showFitrstMessage("hi");
+console.log(num);
+
+function calc(a, b) {
+    return(a+b);
+}
+console.log(calc(4, 3));
+console.log(calc(5, 6));
+console.log(calc(10, 6));
+
+function ret() {
+    let num = 50;
+    return num;
+}
+const anyMum = ret();
+console.log(anyMum);
+
+const logger = function () {
+    console.log("Hello");
+}
+logger();
+
+const calc2 = (a, b) => {
+    console.log('1');
+    return a + b;
+};
