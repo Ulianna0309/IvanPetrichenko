@@ -1,4 +1,4 @@
-let numberOfFilms;
+/*let numberOfFilms;
 
 function start() {
     numberOfFilms = +prompt('Сколько фильмов вы уже просмотрели?');
@@ -64,7 +64,7 @@ function writeYourGenres(){
         personalMovieDB.genres[i-1] = genre;
     }
 }
-writeYourGenres();
+writeYourGenres();*/
 
 
       
@@ -165,3 +165,27 @@ console.log(Math.round(num));
 const test = "12.2px";
 console.log(parseInt(test));
 console.log(parseFloat(test));*/
+
+
+function first() {
+    setTimeout(function () {
+       console.log(1); 
+    }, 500);
+}
+
+function second() {
+    console.log(12); 
+}
+
+first();
+second();
+
+function learnJs(lang,  callback) {
+    console.log(`Я учу ${lang}`);
+    callback();
+}
+
+function done() {
+    console.log('я прошел этот урок');
+}
+learnJs('JS', done);
