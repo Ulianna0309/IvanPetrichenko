@@ -167,7 +167,7 @@ console.log(parseInt(test));
 console.log(parseFloat(test));*/
 
 
-function first() {
+/*function first() {
     setTimeout(function () {
        console.log(1); 
     }, 500);
@@ -188,4 +188,23 @@ function learnJs(lang,  callback) {
 function done() {
     console.log('я прошел этот урок');
 }
-learnJs('JS', done);
+learnJs('JS', done);*/
+
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors : {
+        border: 'black',
+        bg: 'red'
+    } 
+};
+/*console.log(options.name);
+
+delete options.name;
+console.log(options);*/
+
+
+for (let key in options) {
+    console.log(`Свойство ${key} имеет значение ${options[key]}`);
+}
