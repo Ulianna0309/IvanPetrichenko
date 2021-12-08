@@ -11,7 +11,9 @@ console.log(circles);
 
 
 const hearts = document.querySelectorAll('.heart');
-console.log(hearts)
+console.log(hearts);
+
+const wrapper = document.querySelector('.wrapper');
 
 hearts.forEach(item => {
    console.log(item)
@@ -42,5 +44,23 @@ hearts.forEach(item => {
 
 
 const div = document.createElement('div');
+div.classList.add('black');
+
+wrapper.appendChild(div);
+wrapper.insertBefore(div, hearts[1]);
+wrapper.removeChild(hearts[1]);
+wrapper.replaceWith(div, hearts[0]);
+/*hearts[1].before(div);
+hearts[1].after(div);*/
+
+
+/*circles[2].remove();
+hearts[0].replaceWith(circles[0]);*/
+
+
+//div.textContent = "hgfhg";
+div.innerHTML = "<h1>hftfytf</h1>";
+div.insertAdjacentHTML('afterend', '<h2>Hello</h2>');
+
 
 
