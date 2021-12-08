@@ -1,7 +1,7 @@
 'use strict'
 
 
-const personalMovieDB = {
+/*const personalMovieDB = {
     count:  0,
     movies: {},
     actors: {},
@@ -54,13 +54,13 @@ const personalMovieDB = {
     },
     writeYourGenres: function (){
         for (let i = 1; i < 2; i++) {
-            /*let genre = prompt(`Ваш люимый жанр под номером ${i}`);
+            //let genre = prompt(`Ваш люимый жанр под номером ${i}`);
             if (genre === '' || genre == null){
                 console.log('Вы ввели некоректные данные');
                 i--;
             } else {
                 personalMovieDB.genres[i-1] = genre;
-            }*/
+            }//
             let genres = prompt(`Ваш люимый жанр через запятую`);
             if (genres === '' || genres == null){
                 console.log('Вы ввели некоректные данные');
@@ -89,7 +89,7 @@ const personalMovieDB = {
 
 
 
-/*const num = 50;
+const num = 50;
 switch(num){
     case 50:
         console.log('Оно');
@@ -181,10 +181,10 @@ console.log(Math.round(num));
 
 const test = "12.2px";
 console.log(parseInt(test));
-console.log(parseFloat(test));*/
+console.log(parseFloat(test));
 
 
-/*function first() {
+function first() {
     setTimeout(function () {
        console.log(1); 
     }, 500);
@@ -393,3 +393,32 @@ const jonh = Object.create(soldier);
 
 //Object.setPrototypeOf(jonh, soldier);
 jonh.sayHello();*/
+
+//let x = 5; alert( ++x );
+//[] + false - null + true;
+console.log([] + false - null + true);
+
+/*let y = 1; 
+let x = y = 2; 
+alert(x);
+
+alert( "1"[0]);*/
+
+console.log(2 && 1 && null && 0 && undefined);
+//и запинается на лжи
+
+console.log(!!( 1 && 2 ) === (2 && 1));
+
+alert( null || 2 && 3 || 4 );
+
+
+const a = [1, 2, 3]; 
+const b = [1, 2, 3];
+
+
+console.log(a == b);
+
+alert( +"Infinity" );
+
+console.log("Ёжик" > "яблоко");
+console.log(0 || "" || 2 || undefined || true || falsе)
