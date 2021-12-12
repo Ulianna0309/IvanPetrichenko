@@ -52,16 +52,18 @@ movieDB.movies.forEach((film, i) => {
     </li>
     `;
 });
-const btn = document.querySelectorAll('.btn'),
+
+
+/*const btn = document.querySelectorAll('.btn'),
       overlay = document.querySelector('.btn__overlay')
 let i = 0;
 const deleteElement = (e) =>{
     console.log(e.currentTarget);
     console.log(e.type);
     i++;
-    /*if(i == 1){
+    if(i == 1){
         btn.removeEventListener('click', deleteElement);
-    }*/
+    }
 };
 
 btn.forEach(btn => {
@@ -79,5 +81,19 @@ btn.forEach(btn => {
      console.log(event.target);
  });
 
+console.log(document.body.firstElementChild);
+console.log(document.body.lastChild);
+console.log(document.body.childNodes);
+console.log(document.querySelector('.link').parentNode);
+console.log(document.querySelector('[data-current="3"]').nextElementSibling);
+
+
+for (let node of document.body.childNodes) {
+
+    if(node.nodName == '#text'){
+        continue;
+    }
+   console.log(node);    
+}*/
 
  
