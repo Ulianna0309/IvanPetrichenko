@@ -137,6 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 /*
+Разница между async и defer: атрибут defer сохраняет 
+относительную последовательность скриптов, 
+а async – нет. Кроме того, defer всегда ждёт, 
+пока весь HTML-документ будет готов, а async – нет.
+
 
 function loadScript(src) {
     const script = document.createElement('script');
