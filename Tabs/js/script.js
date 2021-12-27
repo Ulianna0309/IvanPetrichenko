@@ -95,7 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     setClock('.timer', deadline);
-});
+
 
 
 //Modal
@@ -138,3 +138,6 @@ document.addEventListener('keydown', (e) => {
         closeModal();
     }
 });
+
+});
+
