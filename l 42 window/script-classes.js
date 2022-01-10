@@ -22,7 +22,7 @@ class ColoredRectangleWithText extends Rectangle{
    }
 }
 
-const div = new ColoredRectangleWithText(25, 10, 'hyfytfy', 'red');
+const div = new ColoredRectangleWithText(25, 10, 'Hello world', 'red');
 div.showMyProps();
 console.log(div.calcArea());
 
