@@ -42,3 +42,18 @@ function calcOrDouble(number, basis = 2){
    console.log(number * basis)
 }
 calcOrDouble(3);
+
+
+const person = {
+   name: 'Alex',
+   tel: '+7444444444',
+   parents: {
+      mum: 'Olga',
+      dad: 'Mike'
+   }
+};
+
+const clone = JSON.parse(JSON.stringify(person));
+clone.parents.mum = 'Ann';
+console.log(person);
+console.log(clone);
