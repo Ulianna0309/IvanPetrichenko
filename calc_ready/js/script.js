@@ -19,4 +19,15 @@ inputRub.addEventListener('input', () => {
         }
     });
 
+    /*request.addEventListener('readystatechange', () => {
+        if (request.readyState === 4 && request.status === 200) {
+          console.log(request.response);
+          const data = JSON.parse(request.response);
+          inputUsd.value = (+inputRub.value / data.current.usd).toFixed(2);
+        } else {
+            inputUsd.value = "Что-то пошло не так";
+    
+        }
+    });*/
+
 });
