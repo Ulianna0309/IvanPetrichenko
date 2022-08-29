@@ -31,3 +31,57 @@ inputRub.addEventListener('input', () => {
     });*/
 
 });
+
+
+  // const btnMobOpen = document.querySelector('[data-btn-open-mob]');
+    //
+    // btnMobOpen.addEventListener('click', () => {
+    //     searchBlock.classList.add('is-visible-search');
+    //     body.classList.add('overflow-mob');
+    // });
+
+
+
+
+     // inputs.forEach((input) => {
+    //     input.addEventListener('input', () => {
+    //         // const username = document.querySelector('[data-validate-field]').value;
+    //         // const url = '/glassagram/account-search?username=yuli' + username;
+    //         const url = 'http://localhost:4000/glassagram/insta.json';
+    //
+    //         if (window.innerWidth > 768) {
+    //             // if (isValidUrl(input.value)) {
+    //             request.open('Get', url);
+    //             searchBlock.classList.add('is-visible-search');
+    //             body.classList.add('overflow-mob');
+    //             loader();
+    //             modalSearchItemBtns.forEach((modalSearchItemBtn) => {
+    //                 modalSearchItemBtn.addEventListener('click', function () {
+    //                     modalNewDiscount.open('modal-new-discount');
+    //                     document.querySelector('[data-search-menu]').classList.remove('is-visible-search-menu');
+    //                 });
+    //             });
+    //             request.send();
+    //             // } else {
+    //             //     searchBlock.classList.remove('is-visible-search');
+    //             //     body.classList.remove('overflow-mob');
+    //             // }
+    //         } else {
+    //             // if (isValidUrl(input.value)) {
+    //             request.open('Get', url);
+    //             searchBlock.classList.add('is-visible-search');
+    //             body.classList.add('overflow-mob');
+    //             loader();
+    //             modalSearchItemBtns.forEach((modalSearchItemBtn) => {
+    //                 modalSearchItemBtn.addEventListener('click', function () {
+    //                     modalNewDiscount.open('modal-new-discount');
+    //                     document.querySelector('[data-search-menu]').classList.remove('is-visible-search-menu');
+    //                 });
+    //             });
+    //             request.send();
+    //             // } else {
+    //             //     body.classList.remove('overflow-mob');
+    //             // }
+    //         }
+    //     });
+    // });

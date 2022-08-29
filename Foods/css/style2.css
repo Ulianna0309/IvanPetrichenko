@@ -1,0 +1,45 @@
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from{
+        opacity: 0.1;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+
+.dropdown-menu-anim {
+    animation: dropdown-menu-fade-in .3s ease 1, dropdown-menu-move-up .3s ease-out 1;
+}
+
+@keyframes dropdown-menu-fade-in {
+    from   { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes dropdown-menu-move-down {
+    from   { margin-top: -10px }
+    to { margin-top: 0; }
+}
+
+@keyframes dropdown-menu-move-up {
+    from   { margin-top: 10px }
+    to { margin-top: 0; }
+}
+
+sudo chmod -R 777 imagestorage_me/
+
+sudo rm -rf public/imagestorage_me/
+git add .
+git stash
+git pull
