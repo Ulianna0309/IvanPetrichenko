@@ -426,4 +426,8 @@ window.addEventListener('DOMContentLoaded', function() {
             dots[slideIndex-1].style.opacity = 1;
         });
     });
+
+
+    //calc
+    
 });
