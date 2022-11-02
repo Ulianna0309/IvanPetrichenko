@@ -435,7 +435,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
      const result = document.querySelector('.calculating__result span');
      let sex = 'female';
-     let height, weight;
+     let height;
+     let weight;
      let age;
      let ratio = 1.375;
  
