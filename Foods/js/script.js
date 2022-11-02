@@ -353,11 +353,15 @@ window.addEventListener('DOMContentLoaded', function() {
         dots.push(dot);
     }
 
+    function deleteNotDigits(str){
+       return +str.replace(/\D/g, '');
+    }
+
     next.addEventListener('click', () => {
-        if (offset == +width.replace(/\D/g, '') * (slides.length - 1)) {
+        if (offset == deleteNotDigits(width) * (slides.length - 1)) {
             offset = 0;
         } else {
-            offset += +width.replace(/\D/g, ''); 
+            offset += deleteNotDigits(width); 
         }
 
         slidesField.style.transform = `translateX(-${offset}px)`;
@@ -380,9 +384,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
     prev.addEventListener('click', () => {
         if (offset == 0) {
-            offset = +width.replace(/\D/g, '') * (slides.length - 1);
+            offset = deleteNotDigits(width) * (slides.length - 1);
         } else {
-            offset -= +width.replace(/\D/g, '');
+            offset -= deleteNotDigits(width);
         }
 
         slidesField.style.transform = `translateX(-${offset}px)`;
@@ -408,7 +412,7 @@ window.addEventListener('DOMContentLoaded', function() {
             const slideTo = e.target.getAttribute('data-slide-to');
 
             slideIndex = slideTo;
-            offset = +width.replace(/\D/g, '') * (slideTo - 1);
+            offset = deleteNotDigits(width) * (slideTo - 1);
 
             slidesField.style.transform = `translateX(-${offset}px)`;
 
