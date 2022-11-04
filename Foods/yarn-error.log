@@ -1,5 +1,5 @@
 Arguments: 
-  /home/asus/.nvm/versions/node/v12.14.0/bin/node /usr/share/yarn/bin/yarn.js add axios
+  /home/asus/.nvm/versions/node/v12.14.0/bin/node /usr/share/yarn/bin/yarn.js add json-server
 
 PATH: 
   /home/asus/.nvm/versions/node/v12.14.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/home/asus/Рабочий стол/Иван Петриченко/Foods/node_modules/express-urlrewrite/node_modules/debug/README.md'
+  Error: EACCES: permission denied, unlink '/home/asus/Рабочий стол/Иван Петриченко/Foods/node_modules/.bin/acorn'
 
 npm manifest: 
   {
@@ -31,7 +31,9 @@ npm manifest:
       "axios": "^0.27.2"
     },
     "devDependencies": {
-      "json-server": "^0.17.0"
+      "json-server": "^0.17.0",
+      "webpack": "^5.74.0",
+      "webpack-cli": "^4.10.0"
     }
   }
 
