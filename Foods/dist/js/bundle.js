@@ -349,19 +349,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function slider () {
+function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCounter,wrapper, field}) {
     let offset = 0;
     let slideIndex = 1;
 
-    const slides = document.querySelectorAll('.offer__slide'),
-        slider = document.querySelector('.offer__slider'),
-        prev = document.querySelector('.offer__slider-prev'),
-        next = document.querySelector('.offer__slider-next'),
-        total = document.querySelector('#total'),
-        current = document.querySelector('#current'),
-        slidesWrapper = document.querySelector('.offer__slider-wrapper'),
+    const slides = document.querySelectorAll(slide),
+        slider = document.querySelector(container),
+        prev = document.querySelector(prevArrow),
+        next = document.querySelector(nextArrow),
+        total = document.querySelector(totalCounter),
+        current = document.querySelector(currentCounter),
+        slidesWrapper = document.querySelector(wrapper),
         width = window.getComputedStyle(slidesWrapper).width,
-        slidesField = document.querySelector('.offer__slider-inner');
+        slidesField = document.querySelector(field);
 
     if (slides.length < 10) {
         total.textContent = `0${slides.length}`;
@@ -397,7 +397,7 @@ function slider () {
         margin-right: 15%;
         margin-left: 15%;
         list-style: none;
-    `; // Если хотите - добавьте в стили, но иногда у нас нет доступа к стилям
+    `; 
     slider.append(indicators);
 
     for (let i = 0; i < slides.length; i++) {
@@ -514,13 +514,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function tabs (){
-     
-    let tabs = document.querySelectorAll('.tabheader__item'),
-    tabsContent = document.querySelectorAll('.tabcontent'),
-    tabsParent = document.querySelector('.tabheader__items');
+function tabs(tabsSelector, tabsContentSelector, tabsParentSelector, activeClass) {
+	let tabs = document.querySelectorAll(tabsSelector),
+		tabsContent = document.querySelectorAll(tabsContentSelector),
+		tabsParent = document.querySelector(tabsParentSelector);
 
-    function hideTabContent() {
+	function hideTabContent() {
         
         tabsContent.forEach(item => {
             item.classList.add('hide');
@@ -528,29 +527,29 @@ function tabs (){
         });
 
         tabs.forEach(item => {
-            item.classList.remove('tabheader__item_active');
+            item.classList.remove(activeClass);
         });
-    }
+	}
 
-    function showTabContent(i = 0) {
+	function showTabContent(i = 0) {
         tabsContent[i].classList.add('show', 'fade');
         tabsContent[i].classList.remove('hide');
-        tabs[i].classList.add('tabheader__item_active');
+        tabs[i].classList.add(activeClass);
     }
-
+    
     hideTabContent();
     showTabContent();
 
-    tabsParent.addEventListener('click', function(event) {
+	tabsParent.addEventListener('click', function(event) {
         const target = event.target;
-        if(target && target.classList.contains('tabheader__item')) {
+		if(target && target.classList.contains(tabsSelector.slice(1))) {
             tabs.forEach((item, i) => {
                 if (target == item) {
                     hideTabContent();
                     showTabContent(i);
                 }
             });
-        }
+		}
     });
 }
 
@@ -568,63 +567,58 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function timer(){
-    
-     const deadline = '2023-06-11';
+function timer(id, deadline) {
+    function getTimeRemaining(endtime) {
+        const t = Date.parse(endtime) - Date.parse(new Date()),
+            days = Math.floor( (t/(1000*60*60*24)) ),
+            seconds = Math.floor( (t/1000) % 60 ),
+            minutes = Math.floor( (t/1000/60) % 60 ),
+            hours = Math.floor( (t/(1000*60*60) % 24) );
 
-     function getTimeRemaining(endtime) {
-         const t = Date.parse(endtime) - Date.parse(new Date()),
-             days = Math.floor( (t/(1000*60*60*24)) ),
-             seconds = Math.floor( (t/1000) % 60 ),
-             minutes = Math.floor( (t/1000/60) % 60 ),
-             hours = Math.floor( (t/(1000*60*60) % 24) );
- 
-         return {
-             'total': t,
-             'days': days,
-             'hours': hours,
-             'minutes': minutes,
-             'seconds': seconds
-         };
-     }
- 
-     function getZero(num){
-         if (num >= 0 && num < 10) { 
-             return '0' + num;
-         } else {
-             return num;
-         }
-     }
- 
-     function setClock(selector, endtime) {
- 
-         const timer = document.querySelector(selector),
-             days = timer.querySelector("#days"),
-             hours = timer.querySelector('#hours'),
-             minutes = timer.querySelector('#minutes'),
-             seconds = timer.querySelector('#seconds'),
-             timeInterval = setInterval(updateClock, 1000);
- 
-         updateClock();
- 
-         function updateClock() {
-             const t = getTimeRemaining(endtime);
- 
-             days.innerHTML = getZero(t.days);
-             hours.innerHTML = getZero(t.hours);
-             minutes.innerHTML = getZero(t.minutes);
-             seconds.innerHTML = getZero(t.seconds);
- 
-             if (t.total <= 0) {
-                 clearInterval(timeInterval);
-             }
-         }
-     }
- 
-     setClock('.timer', deadline);
- 
+        return {
+            'total': t,
+            'days': days,
+            'hours': hours,
+            'minutes': minutes,
+            'seconds': seconds
+        };
+    }
+
+    function getZero(num){
+        if (num >= 0 && num < 10) { 
+            return '0' + num;
+        } else {
+            return num;
+        }
+    }
+
+    function setClock(selector, endtime) {
+
+        const timer = document.querySelector(selector),
+            days = timer.querySelector("#days"),
+            hours = timer.querySelector('#hours'),
+            minutes = timer.querySelector('#minutes'),
+            seconds = timer.querySelector('#seconds'),
+            timeInterval = setInterval(updateClock, 1000);
+
+        updateClock();
+
+        function updateClock() {
+            const t = getTimeRemaining(endtime);
+
+            days.innerHTML = getZero(t.days);
+            hours.innerHTML = getZero(t.hours);
+            minutes.innerHTML = getZero(t.minutes);
+            seconds.innerHTML = getZero(t.seconds);
+
+            if (t.total <= 0) {
+                clearInterval(timeInterval);
+            }
+        }
+    }
+
+    setClock(id, deadline);
 }
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (timer);
 
 /***/ }),
@@ -751,15 +745,22 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener('DOMContentLoaded', function() {
    const modalTimerId = setTimeout(()=> (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__.openModal)('.modal', modalTimerId), 300000);
    
-   (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])();
-   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_5__["default"])();
+   (0,_modules_tabs__WEBPACK_IMPORTED_MODULE_0__["default"])('.tabheader__item', '.tabcontent', '.tabheader__items', 'tabheader__item_active');
    (0,_modules_modal__WEBPACK_IMPORTED_MODULE_1__["default"])('[data-modal]', '.modal', modalTimerId);
    (0,_modules_calc__WEBPACK_IMPORTED_MODULE_4__["default"])();
-   (0,_modules_timer__WEBPACK_IMPORTED_MODULE_2__["default"])();
+   (0,_modules_timer__WEBPACK_IMPORTED_MODULE_2__["default"])('.timer', '2023-06-11');
    (0,_modules_cards__WEBPACK_IMPORTED_MODULE_3__["default"])();
    (0,_modules_forms__WEBPACK_IMPORTED_MODULE_6__["default"])('form', modalTimerId);
-   
-
+   (0,_modules_slider__WEBPACK_IMPORTED_MODULE_5__["default"])({
+      container: '.offer__slider',
+      slide: '.offer__slide',
+      nextArrow: '.offer__slider-next',
+      prevArrow: '.offer__slider-prev',
+      totalCounter: '#total',
+      currentCounter: '#current',
+      wrapper: '.offer__slider-wrapper',
+      field: '.offer__slider-inner'
+  });
 });
 })();
 
