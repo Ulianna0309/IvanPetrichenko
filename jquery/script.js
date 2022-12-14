@@ -17,3 +17,26 @@ $(document).ready(function(){
         }, 2000);
     });
 });
+
+
+function* generator(){
+    yield 'i';
+    yield 'p';
+}
+
+const str = generator();
+console.log(str.next().value);
+console.log(str.next());
+
+
+function* count(n){
+    for (let i = 0; i < i < n; i++) {
+        yield i
+        
+    }
+}
+
+const counter = count(7);
+console.log(counter.next().value);
+console.log(counter.next().value);
+console.log(counter.next().value);
