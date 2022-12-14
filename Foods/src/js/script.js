@@ -9,6 +9,7 @@ import forms from './modules/forms';
 
 
 
+
 window.addEventListener('DOMContentLoaded', function() {
    const modalTimerId = setTimeout(()=> openModal('.modal', modalTimerId), 300000);
    
