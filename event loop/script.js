@@ -17,6 +17,27 @@ setTimeout(() => {
 
 console.log('2');
 
+
+
+setTimeout(() => {
+    console.log('timeout')
+}, 0);
+
+queueMicrotask(() => {
+    console.log('wow')
+});
+
+Promise.resolve()
+    .then(() => console.log('promise'));
+
+
+Promise.resolve()
+    .then(() => console.log('promise_2'));
+
+console.log('code');
+
+
+//() => {} (макрозадача) -> потом микрозадачи все -> render -> () => {} макрозадача
 // console.log('1');
 
 // setTimeout(() => {
