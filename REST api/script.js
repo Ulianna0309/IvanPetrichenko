@@ -28,3 +28,8 @@ function setMembers(members){
   ).join(' ');
 }
 
+function Palindrom(str){
+  return str === str.split('').reverse().join('');
+}
+
+console.log(Palindrom('шалаш'));
